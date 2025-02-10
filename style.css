@@ -1,0 +1,386 @@
+body{
+    background-color: black;
+    padding: 0 30px;
+    padding-top: 60px;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    /* border-bottom: solid 1px white; */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /* pour fixer la navbar */
+    position: fixed;
+    width: 95%;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    padding: 0 30px;
+    background-color: black;
+
+}
+
+h2{
+    text-transform: uppercase;
+    font-weight: xx-large;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 5px;
+}
+
+.navbar_link_list li{
+    list-style: none;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+}
+
+.navbar_link_list li a{
+    text-decoration: none;
+    color: white;
+    padding-bottom: 5px;
+}
+
+.navbar_link ul{
+    display: flex;
+    gap: 30px;
+}
+
+.navbar_link_list li a:hover{
+    border-bottom: 2px solid orange;
+    color: orange;
+}
+
+.navbar_link_list li.active{
+    color: #FFA500;
+    border-bottom: 2px solid orange;
+}
+
+.navbar .toggle_btn{
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+.dropdown_menu{
+    display: none;
+    position: fixed;
+    right: 2rem;
+    top: 60px;
+    height: 0;
+    width: 300px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    /* je ne sait pas ce que cela veut dire, mais je ferai des recherche */
+    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 100;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.dropdown_menu li {
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+}
+
+.dropdown_menu li a {
+    text-decoration: none;
+    color: white;
+    padding-bottom: 10px;
+    border-bottom: 2px solid transparent;
+}
+
+.dropdown_menu li a:hover{
+    color: #FFA500;
+    border-bottom: 2px solid #FFA500;
+}
+
+.dropdown_menu.open{
+    height: 280px;
+}
+
+/* navbar responsive design */
+
+@media (max-width: 992px){ 
+    .navbar .navbar_link_list{
+        display: none;
+    }
+
+    .navbar{
+        padding: 0 10px;
+        top: 0px;
+    }
+
+    .navbar .toggle_btn{
+        display: block;
+        
+        text-align: right;
+    }
+
+    .dropdown_menu{
+        display: block;
+    }
+
+}
+
+@media (max-width: 576px) {
+    .dropdown_menu{
+        left: 2rem;
+        width: unset;
+    }
+    .navbar{
+        padding: 0 10px;
+        top: 0px;
+    }
+}
+
+/* section header */
+
+.header{
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) ;
+    grid-template-rows: 1fr;
+    justify-items: center;
+    align-items: center;
+    margin-bottom: 150px;
+}
+
+h6{
+    color: rgb(252, 200, 104);
+}
+
+span{
+    color: rgb(252, 200, 104);
+}
+
+.header_name{
+    font-size: 4.5rem;
+    margin: 0px;
+}
+
+.header_description{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 2rem;
+}
+
+/* responsive design header */
+
+@media (max-width: 992px){
+    .header{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .header_text{
+        display: grid;
+        justify-self: start;
+    }
+
+    .header_name{
+        font-size: 2.5rem;
+    }
+
+    .header_description{
+        font-size: 1.5rem;
+    }
+
+ } 
+/* about section */
+
+.about_container{
+    position: relative;
+}
+
+.about_limit{
+    font-size: 7rem;
+    color: rgb(120, 120, 120);
+    text-align: center;  
+}
+
+.about{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) ;
+    grid-template-rows: 1fr;
+    justify-items: start;
+    gap: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.about_text{
+    color: white;
+}
+
+.about_me{
+    margin-bottom: 30px;
+}
+
+.about_description{
+    color: rgb(146, 146, 146);
+}
+
+.about_personal_information{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    padding: 0px;
+    align-items: start;
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.about_personal_information ul{
+    flex-direction: column;
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    padding: 0px;
+}
+
+.about_image{
+    justify-self: center;
+}
+
+.about_personal_information_title{
+    font-weight: bold;
+}
+
+.about_personal_information_response{
+    color: rgb(146, 146, 146);
+}
+
+.number_of_project{
+    font-weight: bold;
+    margin-bottom: 30px;
+    font-size: 20px;
+}
+
+button{
+    padding: 15px;
+    border-radius: 50px;
+    background-color: orange;
+    color: black;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.education{
+    color:white;
+    display: flex;
+}
+
+.parcours p{
+    color: rgb(146, 146, 146);
+}
+
+.centre_d-interet .list{
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    color: rgb(146, 146, 146);
+}
+
+/* ABOUT RESPONSIVE DESIGN  */
+
+@media (max-width: 992px){
+    .about{
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    /* .about_text h2{
+        display: grid;
+        justify-items: center;
+    } */
+
+    .about_personal_information{
+        font-size: 0.7rem;
+    }
+
+ }
+
+
+/* section my passion */
+
+.passion-section{
+    color: #fff;
+    padding: 20px 20px;
+    
+}
+
+.my_passion_container{
+    max-width: 800px;
+    margin: 0 auto;
+    justify-self: start;
+}
+
+.my_passion_title{
+    color: #0056b3;
+    margin-bottom: 20px;
+}
+
+.my_passion_description{
+    font-size: 18px;
+    line-height: 1.6;
+    justify-content: start;
+}
+
+.my_passion_title{
+    font-size: 7rem;
+    color: rgb(120, 120, 120);
+    text-align: center;  
+}
+
+.progress_bar{
+    background-color: #FFA500;
+    border-radius: 50px;
+    text-align: center;
+}
+
+.progress_container{
+    background-color: rgb(120, 120, 120);
+    border-radius: 50px;
+    width: 75%;
+    justify-items: start;
+}
+
+.my_passion{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+}
+
+.skill p{
+    justify-self: start;
+    font-size: 25px;
+}
+
+strong{
+    color: #FFA500;
+}
+
+/* MY PASSION RESPONSIVE DESIGN */
+
+@media(max-width:992px){
+    .my_passion_title{
+        font-size: 5rem;
+    }
+
+    .my_passion{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .progress_container{
+        width: 100%;
+    }
+}
